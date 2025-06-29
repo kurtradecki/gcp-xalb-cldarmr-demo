@@ -6,8 +6,9 @@
   vm-name = "<ENTER NAME OF VM WHERE APPLICAITON RUNS HERE>"
 
 # Shouldn't need to change this section, though here just in case
-  named-port-name = "port7860"
-  named-port = "7860"
+  ext_allowed_ips       = ["0.0.0.0/32"] # eg ["1.2.3.4/32","5.6.7.0/24"] - must have at least 1 string value in the list - Public IP range(s) allowed in Cloud Armor for external LB, leave as is to deny all external IPs to reach the external load balancer. Visit https://whatismyipaddress.com/ or other sites like it to get your public IP address.
+  named-port-name = "port80"
+  named-port = "80"
   backend-protocol = "HTTP"
 
 # No need to change anything below this line
