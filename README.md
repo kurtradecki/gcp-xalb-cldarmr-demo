@@ -1,1 +1,2 @@
-# gcp-xalb-cldarmr-demo
+# External Application Load Balancer with Cloud Armor
+
