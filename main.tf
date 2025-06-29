@@ -1,3 +1,14 @@
+terraform {
+  required_version = "~> 1.10.5"
+
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 6.11.2"
+    }
+  }
+}
+
 data "google_compute_instance" "vm" {
   project = var.project-name-and-id
   name = var.vm-name
