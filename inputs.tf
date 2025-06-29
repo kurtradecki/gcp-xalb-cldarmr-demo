@@ -2,6 +2,10 @@ variable project-name-and-id {
   type = string
 }
 
+variable ext_allowed_ips {
+  type = string
+}
+
 variable gcp-region {
   type = string    
 }
