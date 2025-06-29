@@ -51,7 +51,7 @@ resource "google_compute_security_policy" "cloudarmor-policy" {
     match {
       versioned_expr = "SRC_IPS_V1"
       config {
-        src_ip_ranges = ["73.105.71.246/32","70.106.235.76/32"]
+        src_ip_ranges = var.ext_allowed_ips
       }
     }
     description = "Trusted IPs"
