@@ -26,20 +26,24 @@ This repo contains instructions and a Terraform script to build an External Appl
 ## Setup and Deploy the script
 
 To deploy the script, follow this process:
-1. Clone the this repo using the tool of your choice, eg CLI on your machine, [Cloud Shell](https://cloud.google.com/shell/docs/how-cloud-shell-works), VS Code, etc.
+1. Create a project in GCP, if not already created. Reference if needed [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
+      * Create a VPC and subnet in the project
+      * Create a GCE VM in the subnet
+      * Setup Cloud NAT for the VM using these commands:
+      * Load nginx on the VM using this command: 
+2. Clone the this repo using the tool of your choice, eg CLI on your machine, [Cloud Shell](https://cloud.google.com/shell/docs/how-cloud-shell-works), VS Code, etc.
 ```sh
 git clone https://github.com/kurtradecki/gcp-xalb-cldarmr-demo.git
 ```
-2. Ensure you have an active GCP account selected to run gcloud commands with [gcloud CLI SDK](https://cloud.google.com/sdk/docs/install) (not needed in [Cloud Shell](https://cloud.google.com/shell/docs/how-cloud-shell-works)).
+3. Ensure you have an active GCP account selected to run gcloud commands with [gcloud CLI SDK](https://cloud.google.com/sdk/docs/install) (not needed in [Cloud Shell](https://cloud.google.com/shell/docs/how-cloud-shell-works)).
 ```sh
 gcloud auth login
 gcloud auth application-default login
 ```
-3. Create a project in GCP, if not already created. Reference if needed [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
-5. In the gcp-xalb-cldarmr-demo directory, rename example.tfvars to terraform.tfvars
-6. Get your public IP for the terraform.tfvars file. Sites like https://whatismyipaddress.com/ show your public IP
-7. In terraform.tfvars, add the values for variables that need values (see the file for which). All other values can stay the same unless customization required. Reference if needed for how to find project ID, see [Find the project name, number, and ID](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
-9. At the command prompt where you'll run the script, in the Terraform directory, run:
+4. In the gcp-xalb-cldarmr-demo directory, rename example.tfvars to terraform.tfvars
+5. Get your public IP for the terraform.tfvars file. Sites like https://whatismyipaddress.com/ show your public IP.
+6. In terraform.tfvars, add the values for variables that need values (see the file for which). All other values can stay the same unless customization required. Reference if needed for how to find project ID, see [Find the project name, number, and ID](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+7. At the command prompt where you'll run the script, in the Terraform directory, run:
 ```sh 
 terraform init
 terraform plan
