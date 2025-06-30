@@ -1,11 +1,11 @@
 # External Application Load Balancer with Cloud Armor
 
 This repository contains instructions and a Terraform script to build an External Application Load Balancer and Cloud Armor in an isolated Google Cloud environment. The script:
-      * Creates a VPC and subnet
-      * Creates Cloud NAT for the VM
-      * Creates a web server GCE VM running Nginx
-      * To reach the VM, ceates external application load balancer with an HTTP forwarding rule and an HTTPS forwarding rule a certificate
-      * Creates a Cloud Armor policy to protect access to the load balancer
+* Creates a VPC and subnet
+* Creates Cloud NAT for the VM
+* Creates a web server GCE VM running Nginx
+* To reach the VM, ceates external application load balancer with an HTTP forwarding rule and an HTTPS forwarding rule a certificate
+* Creates a Cloud Armor policy to protect access to the load balancer
 
 **Architecture**
 ![Architecture](./images/architecture.png)
