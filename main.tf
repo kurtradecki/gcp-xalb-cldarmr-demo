@@ -194,7 +194,7 @@ resource "google_compute_firewall" "fwr-health-check" {
 # url map
 resource "google_compute_url_map" "url-map" {
   project         = var.project_id
-  name            = "${var.url_map_name}-${var.url_map_name}"
+  name            = "${var.url_map_name}"
   default_service = google_compute_backend_service.backend-service.id
 }
 
