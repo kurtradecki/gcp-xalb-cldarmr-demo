@@ -14,82 +14,99 @@
  * limitations under the License.
  */
 
-variable project-name-and-id {
+variable "project_id" {
   type = string
 }
 
-variable ext_allowed_ips {
+variable "ext_allowed_ips" {
+  type = list(string)
+}
+
+variable cldnat_name {
   type = string
 }
 
-variable gcp-region {
-  type = string    
-}
-
-variable gcp-zone {
-  type = string    
-}
-
-variable vpc-name {
-  type = string    
-}
-
-variable url-map-name {
-  type = string    
-}
-
-variable vm-name {
-  type = string    
-}
-
-variable instance-group-1-name-prefix {
-    type = string
-}
-
-variable cert-name-prefix {
+variable "gcp_region" {
   type = string
 }
 
-variable lb-static-ip-name-prefix {
-  type = string    
-}
-
-variable cloudarmor-policy-name-prefix{
+variable "gcp_zone_suffix" {
   type = string
 }
 
-variable health-check-name-prefix {
+variable "vpc_name" {
   type = string
 }
 
-variable forwarding-rule-name-prefix {
-  type = string    
-}
-
-variable proxy-http-name-prefix {
-  type = string   
-}
-
-variable backend-service-name-prefix {
+variable "url_map_name" {
   type = string
 }
 
-variable fwr-health-check-name-prefix {
+variable "vm_name" {
   type = string
 }
 
-variable named-port-name {
+variable "instance_group_1_name_prefix" {
   type = string
 }
 
-variable named-port {
+variable "cert_name_prefix" {
   type = string
 }
 
-variable backend-protocol {
+variable "lb_static_ip_name_prefix" {
   type = string
 }
 
-variable name-base {
+variable "cloudarmor_policy_name_prefix" {
   type = string
+}
+
+variable "health_check_name_prefix" {
+  type = string
+}
+
+variable "forwarding_rule_name_prefix" {
+  type = string
+}
+
+variable "proxy_http_name_prefix" {
+  type = string
+}
+
+variable "backend_service_name_prefix" {
+  type = string
+}
+
+variable "fwr_health_check_name_prefix" {
+  type = string
+}
+
+variable "named_port_name" {
+  type = string
+}
+
+variable "named_port" {
+  type = string
+}
+
+variable "backend_protocol" {
+  type = string
+}
+
+variable "vpc_subnets" {
+  description = "Subnets"
+  #  type = list(object({
+  type = object({
+    name               = string
+    ip_cidr_range      = string
+    region             = optional(string, "")
+    secondary_ip_range = map(string)
+    flow_logs_config = object({
+      aggregation_interval = string
+      flow_sampling        = number
+      metadata             = string
+    })
+  })
+  #  }))
 }
