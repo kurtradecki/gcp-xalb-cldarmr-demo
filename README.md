@@ -8,7 +8,6 @@ This repo contains instructions and a Terraform script to build an External Appl
 ## Notes
 * The intent of this repo is to create a fixed, isolated environment for learning, demonstration and Proof of Concept (PoC), **not production**.
 * The actions taken by deploying this repo will add cost. To minimize costs, instructions are provided for how to teardown the demo environment when you're finished using it. For more on cost, please refer to Google Cloud public pricing pages for components such as External Load Balancers, Reserved IP Addresses, Data Transfer, Certificate Manager, Cloud Armor, etc.
-* Org policies must be set for the script to run (see Prerequisites below). The script may not be appropriate for highly regulated environments. 
 
 
 ## Prerequisites
@@ -19,9 +18,6 @@ This repo contains instructions and a Terraform script to build an External Appl
 3. Project-level permissions needed to run the script:\
    a. Permission: . Role: 
 4. Org-level permissions needed to run the script:
-5. The following [Google Cloud org policies](https://cloud.google.com/resource-manager/docs/organization-policy/using-constraints) must be set for the script to run:
-    * constraints/compute.requireShieldedVm
-    * disableInternetNetworkEndpointGroup at the project level, and sets to "allow all" for org policies trustedImageProjects and restrictVpnPeerIPs at the project level, so .
 
 
 ## Setup and Deploy the script
