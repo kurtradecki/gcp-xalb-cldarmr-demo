@@ -26,7 +26,7 @@ This repository contains instructions and a Terraform script to build an Externa
 
 To deploy the script, follow this process:
 1. Create a project in GCP, if not already created. Reference if needed [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
-2. Enable these APIs in the project: Compute Engine API
+2. Enable Compute Engine API in the project
 3. Clone the this repo using the tool of your choice, eg CLI on your machine, [Cloud Shell](https://cloud.google.com/shell/docs/how-cloud-shell-works), VS Code, etc.
 ```sh
 git clone https://github.com/kurtradecki/gcp-xalb-cldarmr-demo.git
