@@ -51,12 +51,12 @@ If you experience errors, go to the Troubleshooting section below.
 
 ## Test the setup
 
-Go to the GCP Console under Network Services > Load balancing. 
-Select the load balancer named "lb-gxa" and copy the public IP address asscoiated with the load balancer.
-Using a web browser such as Chrome, browse to either https://<IP_ADDR>.nip.io (eg ), https://<IP_ADDR> or http://<IP_ADDR>. 
-* https://<IP_ADDR> or http://<IP_ADDR> will return a cert error though allow you to access the web server.
-* https://<IP_ADDR>.nip.io will return no cert error.
-* There will be a delay for the cert used with https://<IP_ADDR>.nip.io to become active. See Cert for External application load balancer section below. 
+* Go to the GCP Console under Network Services > Load balancing
+* Select the load balancer named "lb-gxa" and copy the public IP address asscoiated with the load balancer
+* Using a web browser such as Chrome, browse to either https://<IP_ADDR>.nip.io (eg ), https://<IP_ADDR> or http://<IP_ADDR> 
+   * https://<IP_ADDR> or http://<IP_ADDR> will return a cert error though allow you to access the web server.
+   * https://<IP_ADDR>.nip.io will return no cert error.
+   * There will be a delay for the cert used with https://<IP_ADDR>.nip.io to become active. See Cert for External application load balancer section below. 
 
 ## Troubleshooting
 
