@@ -20,34 +20,32 @@ This repository contains instructions and a Terraform script to build an Externa
     * [gcloud CLI SDK](https://cloud.google.com/sdk/docs/install)
     * terraform
 2. Must be using Terraform **version 1.10 or above**. Run the `terraform --version` command to verify version. If needed, upgrade instructions here: https://www.tecmint.com/install-terraform-in-linux/
-3. Project-level permissions needed to run the script:\
-   a. Permission: . Role: 
-4. Org-level permissions needed to run the script:
 
 
 ## Setup and Deploy the script
 
 To deploy the script, follow this process:
 1. Create a project in GCP, if not already created. Reference if needed [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
-2. Clone the this repo using the tool of your choice, eg CLI on your machine, [Cloud Shell](https://cloud.google.com/shell/docs/how-cloud-shell-works), VS Code, etc.
+2. Enable these APIs in the project: Compute Engine API
+3. Clone the this repo using the tool of your choice, eg CLI on your machine, [Cloud Shell](https://cloud.google.com/shell/docs/how-cloud-shell-works), VS Code, etc.
 ```sh
 git clone https://github.com/kurtradecki/gcp-xalb-cldarmr-demo.git
 ```
-3. Ensure you have an active GCP account selected to run gcloud commands with [gcloud CLI SDK](https://cloud.google.com/sdk/docs/install) (not needed in [Cloud Shell](https://cloud.google.com/shell/docs/how-cloud-shell-works)).
+4. Ensure you have an active GCP account selected to run gcloud commands with [gcloud CLI SDK](https://cloud.google.com/sdk/docs/install) (not needed in [Cloud Shell](https://cloud.google.com/shell/docs/how-cloud-shell-works)).
 ```sh
 gcloud auth login
 gcloud auth application-default login
 ```
-4. In the gcp-xalb-cldarmr-demo directory, rename example.tfvars to terraform.tfvars
-5. Get your public IP for the terraform.tfvars file. Sites like https://whatismyipaddress.com/ show your public IP.
-6. In terraform.tfvars, add the values for variables that need values (see the file for which). All other values can stay the same unless customization required. Reference if needed for how to find project ID, see [Find the project name, number, and ID](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
-7. At the command prompt where you'll run the script, in the Terraform directory, run:
+5. In the gcp-xalb-cldarmr-demo directory, rename example.tfvars to terraform.tfvars
+6. Get your public IP for the terraform.tfvars file. Sites like https://whatismyipaddress.com/ show your public IP.
+7. In terraform.tfvars, add the values for variables that need values (see the file for which). All other values can stay the same unless customization required. Reference if needed for how to find project ID, see [Find the project name, number, and ID](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+8. At the command prompt where you'll run the script, in the Terraform directory, run:
 ```sh 
 terraform init
 terraform plan
 terraform apply -auto-approve
 ```
-8. Wait a few minutes for the script to complete (setting Looker custom domain takes 10-15 minutes). You'll see a message similar to "Apply complete!" and then move to the next section.
+9. Wait a few minutes for the script to complete (setting Looker custom domain takes 10-15 minutes). You'll see a message similar to "Apply complete!" and then move to the next section.
 
 
 ## Troubleshooting
