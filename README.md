@@ -2,7 +2,8 @@
 
 This repo contains instructions and a Terraform script to build an External Application Load Balancer and Cloud Armor in an isolated Google Cloud environment.
 
-
+**Architecture**
+![Architecture](./images/architecture.png)
 
 ## Notes
 * The intent of this repo is to create a fixed, isolated environment for learning, demonstration and Proof of Concept (PoC), **not production**.
