@@ -25,14 +25,6 @@ terraform {
   }
 }
 
-/*
-data "google_compute_instance" "vm" {
-  project = var.project_id
-  name    = var.vm_name
-  zone    = "${var.gcp_region}${var.gcp_zone_suffix}"
-}
-*/
-
 # create VPC and subnets
 module "vpc" {
   source     = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/net-vpc?ref=v36.0.0"
@@ -50,6 +42,7 @@ module "cldnat-websrvr" {
   region         = var.gcp_region
   name           = "${var.cldnat_name}-${var.vpc_name}"
   router_network = var.vpc_name
+  depends_on = [ module.vpc ]
 }
 
 # create web server VM
@@ -74,10 +67,8 @@ resource "google_compute_instance" "websrvr_vm" {
     startup-script  = "sudo apt-get update\nsudo apt-get install -y nginx\nsudo systemctl start nginx"
   }
   network_interface {
-  #  network = "https://www.googleapis.com/compute/v1/projects/${var.project_id}/global/networks/${var.vpc_name}"
     stack_type         = "IPV4_ONLY"
     subnetwork         = "https://www.googleapis.com/compute/v1/projects/${var.project_id}/regions/${var.gcp_region}/subnetworks/${var.vpc_subnets.name}"
-  #  subnetwork_project = var.project_id
   }
   shielded_instance_config {
     enable_integrity_monitoring = true
@@ -165,8 +156,6 @@ resource "google_compute_health_check" "health-check" {
   }
 }
 
-# *** above uses HTTP, not TCP … diff between Haider's environment and this one
-
 # backend service with custom request and response headers
 resource "google_compute_backend_service" "backend-service" {
   project               = var.project_id
@@ -176,7 +165,7 @@ resource "google_compute_backend_service" "backend-service" {
   load_balancing_scheme = "EXTERNAL"
   timeout_sec           = 10
   enable_cdn            = false
-  #  security_policy         = google_compute_security_policy.cloudarmor-policy.id
+  security_policy         = google_compute_security_policy.cloudarmor-policy.id
   health_checks = [google_compute_health_check.health-check.id]
   backend {
     group           = google_compute_instance_group.instance-group.id
@@ -199,6 +188,7 @@ resource "google_compute_firewall" "fwr-health-check" {
   log_config {
     metadata = "INCLUDE_ALL_METADATA"
   }
+  depends_on = [ module.vpc ]
 }
 
 # url map
