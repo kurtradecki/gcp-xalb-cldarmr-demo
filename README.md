@@ -1,6 +1,9 @@
 # External Application Load Balancer with Cloud Armor
 
-This repo contains instructions and a Terraform script to build an External Application Load Balancer and Cloud Armor in an isolated Google Cloud environment.
+This repo contains instructions and a Terraform script to build an External Application Load Balancer and Cloud Armor in an isolated Google Cloud environment. The script:
+      * Creates a VPC and subnet
+      * Create Cloud NAT for the VM
+      * Create a GCE VM in the subnet with commands to load nginx on the VM using this command
 
 **Architecture**
 ![Architecture](./images/architecture.png)
@@ -24,10 +27,6 @@ This repo contains instructions and a Terraform script to build an External Appl
 
 To deploy the script, follow this process:
 1. Create a project in GCP, if not already created. Reference if needed [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
-      * Create a VPC and subnet in the project
-      * Create a GCE VM in the subnet
-      * Setup Cloud NAT for the VM using these commands:
-      * Load nginx on the VM using this command: 
 2. Clone the this repo using the tool of your choice, eg CLI on your machine, [Cloud Shell](https://cloud.google.com/shell/docs/how-cloud-shell-works), VS Code, etc.
 ```sh
 git clone https://github.com/kurtradecki/gcp-xalb-cldarmr-demo.git
