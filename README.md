@@ -4,7 +4,7 @@ This repository contains instructions and a Terraform script to build an Externa
 * Creates a VPC and subnet
 * Creates Cloud NAT for the VM
 * Creates a web server GCE VM running Nginx
-* To reach the VM, ceates external application load balancer with an HTTP forwarding rule and an HTTPS forwarding rule a certificate
+* To reach the VM, creates external application load balancer with an HTTP forwarding rule and an HTTPS forwarding rule a certificate
 * Creates a Cloud Armor policy to protect access to the load balancer
 
 ## Architecture
