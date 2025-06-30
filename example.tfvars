@@ -15,19 +15,18 @@
  */
 
 # This top section meant to be changed to fit your environment
-project_id      = "<ENTER PROJECT ID HERE>"
-gcp_region      = "<ENTER REGION HERE>"
-gcp_zone_suffix = "<ENTER ZONE HERE>"
-vm_name         = "<ENTER NAME OF VM WHERE APPLICAITON RUNS HERE>"
+project_id      = "<ENTER PROJECT ID HERE>" 
+gcp_region      = "<ENTER REGION HERE>" # eg "us-central1"
+gcp_zone_suffix = "<ENTER ZONE HERE>" # eg "-c", will be added to the end of gcp_region for the zone
 
 # Shouldn't need to change this section, though here just in case
-ext_allowed_ips  = ["0.0.0.0/32"] # eg ["1.2.3.4/32","5.6.7.0/24"] - must have at least 1 string value in the list - Public IP range(s) allowed in Cloud Armor for external LB, leave as is to deny all external IPs to reach the external load balancer. Visit https://whatismyipaddress.com/ or other sites like it to get your public IP address.
+ext_allowed_ips  = ["0.0.0.0/32"] # eg ["1.2.3.4/32","5.6.7.0/24"] - must have at least 1 string value in the list - Public IP range(s) allowed in Cloud Armor for external LB, leave as ["0.0.0.0/32"] to deny all external IPs to reach the external load balancer. Visit https://whatismyipaddress.com/ or other sites like it to get your public IP address.
 named_port_name  = "port80"
 named_port       = "80"
 backend_protocol = "HTTP"
 
 # No need to change anything below this line
-#  name_base = ""
+vm_name                       = "websrvr"
 cldnat_name                   = "pubnat"
 url_map_name                  = "lb-gxa" # becomes the load balancer name for an application load balancer
 instance_group_1_name_prefix  = "instgrp"
