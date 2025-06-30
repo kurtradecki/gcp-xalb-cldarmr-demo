@@ -37,7 +37,7 @@ gcloud auth login
 gcloud auth application-default login
 ```
 5. In the gcp-xalb-cldarmr-demo directory, rename example.tfvars to terraform.tfvars
-6. Get your public IP for the terraform.tfvars file. Sites like https://whatismyipaddress.com/ show your public IP.
+6. Find your public IP to add it to the terraform.tfvars file in the next step. Sites like https://whatismyipaddress.com/ show your public IP.
 7. In terraform.tfvars, add the values for variables that need values (see the file for which). All other values can stay the same unless customization required. Reference if needed for how to find project ID, see [Find the project name, number, and ID](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
 8. At the command prompt where you'll run the script, in the Terraform directory, run:
 ```sh 
