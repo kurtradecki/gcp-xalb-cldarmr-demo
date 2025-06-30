@@ -7,7 +7,7 @@ This repository contains instructions and a Terraform script to build an Externa
 * To reach the VM, ceates external application load balancer with an HTTP forwarding rule and an HTTPS forwarding rule a certificate
 * Creates a Cloud Armor policy to protect access to the load balancer
 
-**Architecture**
+## Architecture
 ![Architecture](./images/architecture.png)
 
 ## Notes
