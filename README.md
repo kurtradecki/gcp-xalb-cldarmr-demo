@@ -10,7 +10,7 @@ This repository contains instructions and a Terraform script to build an Externa
 ## Architecture
 ![Architecture](./images/architecture.png)
 
-<img src="http://localhost/images/architecture.png" width="200" height="200" />
+<img src="http://localhost/images/architecture.png" width="100" height="100" />
 
 ## Notes
 * The intent of this repo is to create a fixed, isolated environment for learning, demonstration and Proof of Concept (PoC), **not production**.
