@@ -62,9 +62,11 @@ With a successful connection to the web server, your web browser will display a 
 
 <img src="https://github.com/kurtradecki/gcp-xalb-cldarmr-demo/blob/main/images/webpage.png" alt="Your image title" width="500"/>
 
-If blocked by Cloud Armor, you'll get a 403 error. 
 
 ## Troubleshooting
+
+**403 error connecting to the load balancer / web server**
+The way the script builds the Cloud Armor policy, if a Cloud Armor rule blocks your connection, you'll see a 403 error. Review your settings for allowed IPs in terraform.tfvars and add your Public IP address.
 
 **Terraform script errors**\
 Most errors in this Terraform script can be cleared by running the `terraform plan` and `terraform apply -auto-approve` again. 
