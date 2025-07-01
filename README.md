@@ -60,6 +60,8 @@ If you experience errors, go to the Troubleshooting section below.
  
 A successful connection to the web server will result in a page that looks like this:
 
+<img src="https://github.com/kurtradecki/gcp-xalb-cldarmr-demo/blob/main/images/webpage.png" alt="Your image title" width="250"/>
+
 ![](./images/webpage.png)
 
 If blocked by Cloud Armor, you'll get a 403 error. 
