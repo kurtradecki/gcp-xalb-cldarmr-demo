@@ -65,7 +65,7 @@ With a successful connection to the web server, your web browser will display a 
 
 ## Troubleshooting
 
-**403 error connecting to the load balancer / web server**
+**403 error connecting to the load balancer / web server**\
 The way the script builds the Cloud Armor policy, if a Cloud Armor rule blocks your connection, you'll see a 403 error. Review your settings for allowed IPs in terraform.tfvars and add your Public IP address.
 
 **Terraform script errors**\
