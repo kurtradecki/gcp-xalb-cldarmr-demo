@@ -59,6 +59,7 @@ If you experience errors, go to the Troubleshooting section below.
    * There will be a delay for the cert used with https://<IP_ADDR>.nip.io to become active. See Cert for External application load balancer section below
  
 A successful connection to the web server will result in a page that looks like this:
+
 ![](./images/webpage.png | width=50))
 
 If blocked by Cloud Armor, you'll get a 403 error. 
