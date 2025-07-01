@@ -8,7 +8,7 @@ This repository contains instructions and a Terraform script to build an Externa
 * Creates a Cloud Armor policy to protect access to the load balancer
 
 ## Architecture
-![Architecture](./images/architecture.png | width=100)
+![Architecture](./images/architecture.png)
 
 ## Notes
 * The intent of this repo is to create a fixed, isolated environment for learning, demonstration and Proof of Concept (PoC), **not production**.
@@ -60,7 +60,7 @@ If you experience errors, go to the Troubleshooting section below.
  
 A successful connection to the web server will result in a page that looks like this:
 
-![](./images/webpage.png | width=50))
+![](./images/webpage.png)
 
 If blocked by Cloud Armor, you'll get a 403 error. 
 
