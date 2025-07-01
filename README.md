@@ -58,7 +58,7 @@ If you experience errors, go to the Troubleshooting section below.
    * https://<IP_ADDR>.nip.io uses certs and will return no cert error
    * There will be a delay for the cert used with https://<IP_ADDR>.nip.io to become active. See Cert for External application load balancer section below
  
-A successful connection to the web server will result in a page that looks like this:
+With a successful connection to the web server, your web browser will display a page that looks like this:
 
 <img src="https://github.com/kurtradecki/gcp-xalb-cldarmr-demo/blob/main/images/webpage.png" alt="Your image title" width="500"/>
 
