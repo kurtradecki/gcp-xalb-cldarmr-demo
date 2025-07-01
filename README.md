@@ -60,7 +60,6 @@ If you experience errors, go to the Troubleshooting section below.
  
 A successful connection to the web server will result in a page that looks like this:
 ![webpage](./images/webpage.png)
-<img src="webpage.png" alt="drawing" width="200"/>
 
 If blocked by Cloud Armor, you'll get a 403 error. 
 
