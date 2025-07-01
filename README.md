@@ -10,6 +10,8 @@ This repository contains instructions and a Terraform script to build an Externa
 ## Architecture
 ![Architecture](./images/architecture.png)
 
+<img src="http://localhost/images/architecture.png" width="200" height="200" />
+
 ## Notes
 * The intent of this repo is to create a fixed, isolated environment for learning, demonstration and Proof of Concept (PoC), **not production**.
 * The actions taken by deploying this repo will add cost. To minimize costs, instructions are provided for how to teardown the demo environment when you're finished using it. For more on cost, please refer to Google Cloud public pricing pages for components such as External Load Balancers, Reserved IP Addresses, Data Transfer, Certificate Manager, Cloud Armor, etc.
