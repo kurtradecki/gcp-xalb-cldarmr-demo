@@ -66,7 +66,7 @@ With a successful connection to the web server, your web browser will display a 
 ## Troubleshooting
 
 **403 error connecting to the load balancer / web server**\
-The way the script builds the Cloud Armor policy, if a Cloud Armor rule blocks your connection, you're browser will receive HTTP response code 403. The message in your browser will be something like "403 Forbidden". Review your settings for allowed IPs in terraform.tfvars and add your Public IP address.
+The way the script builds the Cloud Armor policy, if a Cloud Armor rule blocks your connection, you're browser will receive HTTP response code 403. The message in your browser will be something like "403 Forbidden". Review your settings for allowed IPs in terraform.tfvars and add your Public IP address. Also, note that it can take up to 15 minutes for any changes to IPs allowed/blocked in Cloud Armor. 
 
 **Terraform script errors**\
 Most errors in this Terraform script can be cleared by running the `terraform plan` and `terraform apply -auto-approve` again. 
