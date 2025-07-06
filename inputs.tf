@@ -82,6 +82,10 @@ variable "fwr_health_check_name_prefix" {
   type = string
 }
 
+variable "fwr_ssh_iap" {
+  type = string
+}
+
 variable "named_port_name" {
   type = string
 }

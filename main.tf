@@ -117,6 +117,23 @@ resource "google_compute_managed_ssl_certificate" "cert" {
   }
 }
 
+# create firewall rule to allow SSH from IAP IP range
+resource "google_compute_firewall" "fwr-ssh-iap-range" {
+  project   = var.project_id
+  name      = var.fwr_ssh_iap
+  direction = "INGRESS"
+  priority  = "1000"
+  network   = var.vpc_name
+  allow {
+    protocol = "tcp"
+  }
+  source_ranges = ["35.235.240.0/20"]
+  log_config {
+    metadata = "INCLUDE_ALL_METADATA"
+  }
+  depends_on = [ module.vpc ]
+}
+
 # create Cloud Armor policy for only allowed IPs
 resource "google_compute_security_policy" "cloudarmor-policy" {
   project = var.project_id
